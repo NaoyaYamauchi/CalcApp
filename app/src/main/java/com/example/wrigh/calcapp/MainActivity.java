@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
-
         try{
             val1=Double.valueOf(mEditText1.getText().toString());
             val2=Double.valueOf(mEditText2.getText().toString());
@@ -62,6 +61,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             symbol=4;
         }
 
+        //ゼロ除算の回避
+        if(val2 == 0.0&&symbol==3){
+            symbol =4;
+        }
+        //ゼロで割れないようにする
+        if(val1 == 0.0&&symbol==3){
+            symbol =4;
+        }
 
         Intent intent = new Intent(this,SecondActivity.class);
         intent.putExtra("Value1",val1);
