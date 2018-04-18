@@ -65,10 +65,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(val2 == 0.0&&symbol==3){
             symbol =4;
         }
-        //ゼロで割れないようにする
-        if(val1 == 0.0&&symbol==3){
-            symbol =4;
-        }
 
         Intent intent = new Intent(this,SecondActivity.class);
         intent.putExtra("Value1",val1);
